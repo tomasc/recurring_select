@@ -351,10 +351,10 @@ exports.default = RecurringSelectDialog = function () {
     key: 'mainEventInit',
     value: function mainEventInit() {
       // Tap hooks are for jQueryMobile
-      this.outer_holder.on('tap', this.outerCancel);
-      this.content.on('tap', 'h1 a', this.cancel);
-      this.save_button = this.content.find('input.rs_save').on("tap", this.save);
-      return this.content.find('input.rs_cancel').on("tap", this.cancel);
+      this.outer_holder.on('click', this.outerCancel);
+      this.content.on('click', 'h1 a', this.cancel);
+      this.save_button = this.content.find('input.rs_save').on("click", this.save);
+      return this.content.find('input.rs_cancel').on("click", this.cancel);
     }
   }, {
     key: 'freqInit',
@@ -474,7 +474,7 @@ exports.default = RecurringSelectDialog = function () {
       }
       this.current_rule.hash['week_start'] = $.fn.recurring_select.texts["first_day_of_week"];
       return $.ajax({
-        url: '<%= Rails.application.config.action_controller.relative_url_root %>/recurring_select/translate/' + $.fn.recurring_select.texts["locale_iso_code"],
+        url: '/recurring_select/translate/' + $.fn.recurring_select.texts["locale_iso_code"],
         type: "POST",
         data: this.current_rule.hash,
         success: this.summaryFetchSuccess
@@ -507,7 +507,7 @@ exports.default = RecurringSelectDialog = function () {
       if ($.inArray(-1, this.current_rule.hash.validations.day_of_month) !== -1) {
         end_of_month_link.addClass("selected");
       }
-      return monthly_calendar.find("a").on("tap", this.dateOfMonthChanged);
+      return monthly_calendar.find("a").on("click", this.dateOfMonthChanged);
     }
   }, {
     key: 'init_calendar_weeks',
@@ -539,7 +539,7 @@ exports.default = RecurringSelectDialog = function () {
           return section.find('a[day=\'' + key + '\'][instance=\'' + instance + '\']').addClass("selected");
         });
       });
-      return monthly_calendar.find("a").on("tap", this.weekOfMonthChanged);
+      return monthly_calendar.find("a").on("click", this.weekOfMonthChanged);
     }
   }, {
     key: 'toggle_month_view',

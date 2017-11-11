@@ -75,10 +75,10 @@ export default class RecurringSelectDialog
 
   mainEventInit: ->
     # Tap hooks are for jQueryMobile
-    @outer_holder.on 'tap', @outerCancel
-    @content.on 'tap', 'h1 a', @cancel
-    @save_button = @content.find('input.rs_save').on "tap", @save
-    @content.find('input.rs_cancel').on "tap", @cancel
+    @outer_holder.on 'click', @outerCancel
+    @content.on 'click', 'h1 a', @cancel
+    @save_button = @content.find('input.rs_save').on "click", @save
+    @content.find('input.rs_cancel').on "click", @cancel
 
   freqInit: ->
     @freq_select = @outer_holder.find ".rs_frequency"
@@ -176,7 +176,7 @@ export default class RecurringSelectDialog
     return if !(@current_rule.hash? && (rule_type = @current_rule.hash.rule_type)?)
     @current_rule.hash['week_start'] = $.fn.recurring_select.texts["first_day_of_week"]
     $.ajax
-      url: "<%= Rails.application.config.action_controller.relative_url_root %>/recurring_select/translate/#{$.fn.recurring_select.texts["locale_iso_code"]}",
+      url: "/recurring_select/translate/#{$.fn.recurring_select.texts["locale_iso_code"]}",
       type: "POST",
       data: @current_rule.hash
       success: @summaryFetchSuccess
@@ -200,7 +200,7 @@ export default class RecurringSelectDialog
     if $.inArray(-1, @current_rule.hash.validations.day_of_month) != -1
       end_of_month_link.addClass("selected")
 
-    monthly_calendar.find("a").on "tap", @dateOfMonthChanged
+    monthly_calendar.find("a").on "click", @dateOfMonthChanged
 
   init_calendar_weeks: (section) =>
     monthly_calendar = section.find(".rs_calendar_week")
@@ -222,7 +222,7 @@ export default class RecurringSelectDialog
     $.each @current_rule.hash.validations.day_of_week, (key, value) ->
       $.each value, (index, instance) ->
         section.find("a[day='#{key}'][instance='#{instance}']").addClass("selected")
-    monthly_calendar.find("a").on "tap", @weekOfMonthChanged
+    monthly_calendar.find("a").on "click", @weekOfMonthChanged
 
   toggle_month_view: =>
     week_mode = @content.find(".monthly_rule_type_week").prop("checked")
