@@ -101,15 +101,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _methods;
 
-$(function () {
-  $(document).on("focus", ".recurring_select", function () {
-    return $(this).recurring_select('set_initial_values');
-  });
-  return $(document).on("change", ".recurring_select", function () {
-    return $(this).recurring_select('changed');
-  });
-});
+// $ ->
+//   $(document).on "focus", ".recurring_select", ->
+//     $(this).recurring_select('set_initial_values')
 
+//   $(document).on "change", ".recurring_select", ->
+//     $(this).recurring_select('changed')
 _methods = {
   set_initial_values: function set_initial_values() {
     this.data('initial-value-hash', this.val());
@@ -177,7 +174,7 @@ $.fn.recurring_select = function (method) {
   if (method in _methods) {
     return _methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
   } else {
-    return $.error("Method " + method + " does not exist on jQuery.recurring_select");
+    return $.error('Method ' + method + ' does not exist on jQuery.recurring_select');
   }
 };
 

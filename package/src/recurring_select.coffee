@@ -1,11 +1,11 @@
 import RecurringSelectDialog from './recurring_select_dialog'
 
-$ ->
-  $(document).on "focus", ".recurring_select", ->
-    $(this).recurring_select('set_initial_values')
-
-  $(document).on "change", ".recurring_select", ->
-    $(this).recurring_select('changed')
+# $ ->
+#   $(document).on "focus", ".recurring_select", ->
+#     $(this).recurring_select('set_initial_values')
+#
+#   $(document).on "change", ".recurring_select", ->
+#     $(this).recurring_select('changed')
 
 methods =
   set_initial_values: ->
