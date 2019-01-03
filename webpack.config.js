@@ -25,7 +25,7 @@ module.exports = {
   },
   entry: './package/src/index.js',
   output: {
-    library: '@tomasc/hashtags',
+    library: '@tomasc/recurring-select',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     filename: 'index.js',

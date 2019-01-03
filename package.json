@@ -1,5 +1,5 @@
 {
-  "name": "recurring_select",
+  "name": "@tomasc/recurring_select",
   "version": "1.0.0",
   "description": "A select helper which gives you magical powers to generate ice_cube rules.",
   "main": "package/dist/index.js",
