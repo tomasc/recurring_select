@@ -94,7 +94,6 @@ select option.bold {
           display: inline-block;
           height: 16px;
           width: 16px;
-          background-image: image-url("recurring_select/cancel.png");
           background-position: center;
           background-repeat: no-repeat; }
       .rs_dialog_holder .rs_dialog .rs_dialog_content p {
@@ -217,7 +216,6 @@ select option.bold {
         .rs_dialog_holder .rs_dialog .rs_dialog_content .rs_summary.fetching {
           color: #999; }
           .rs_dialog_holder .rs_dialog .rs_dialog_content .rs_summary.fetching span {
-            background-image: image-url("recurring_select/throbber_13x13.gif");
             background-position: center;
             background-repeat: no-repeat;
             display: inline-block;
@@ -246,6 +244,7 @@ select option.bold {
       left: 10px; }
     .rs_dialog_holder .rs_dialog.animated .rs_summary, .rs_dialog_holder .rs_dialog.animated .freq_option_section {
       display: none; }
+
 /* Make the jQuery mobile wrapped input elements inline */
 div.ui-recurring-select {
   display: inline-block; }
@@ -291,3 +290,4 @@ p.monthly_rule_type label {
     .rs_dialog_holder .rs_dialog .rs_dialog_content .rs_summary span {
       font-size: 90%;
       font-weight: normal; }
+
